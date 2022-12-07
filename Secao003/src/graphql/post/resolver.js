@@ -1,30 +1,22 @@
-const users = () => {
-  return [
-    {
-      id: '1',
-      userName: 'thais_alves',
-    },
-    {
-      id: '2',
-      userName: 'bia_burguesa',
-    },
-    {
-      id: '3',
-      userName: 'wanda_maximoff',
-    },
-  ];
+const post = async (_, { id }, { getPosts }) => {
+  const response = await getPosts('/' + id);
+  return response.json();
 };
 
-const user = () => {
-  return {
-    id: '1',
-    userName: 'Luiz',
-  };
+const posts = async (_, __, { getPosts }) => {
+  const response = await getPosts();
+  return response.json();
 };
 
-export const userResolvers = {
+export const postResolvers = {
   Query: {
-    user,
-    users,
+    post,
+    posts,
+  },
+  Post: {
+    unixTimestamp: ({ createdAt }) => {
+      const timestamp = new Date(createdAt).getTime() / 1000;
+      return Math.floor(timestamp);
+    },
   },
 };

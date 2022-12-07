@@ -1,7 +1,10 @@
 import { gql } from 'apollo-server';
+
 import { postTypeDefs } from './post/typedefs';
-import { postResolvers, userResolvers } from './user/resolver';
 import { userTypeDefs } from './user/typedefs';
+
+import { userResolvers } from './user/resolver';
+import { postResolvers } from './post/resolver';
 
 const rootTypeDefs = gql`
   type Query {

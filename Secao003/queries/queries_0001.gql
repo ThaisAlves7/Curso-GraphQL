@@ -1,4 +1,4 @@
-query GET_USER {
+query GET_USERS {
   user {
     id
     userName

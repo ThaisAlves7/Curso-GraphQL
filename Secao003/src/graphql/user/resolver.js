@@ -1,30 +1,17 @@
-const posts = () => {
-  return [
-    {
-      id: '1',
-      title: 'A Cabana',
-    },
-    {
-      id: '2',
-      title: 'A Irmandade Adaga Negra',
-    },
-    {
-      id: '3',
-      title: 'Amos e Masmorras',
-    },
-  ];
+const users = async (_, __, { getUsers }) => {
+  const users = await getUsers();
+  return users.json();
 };
 
-const post = () => {
-  return {
-    id: '1',
-    title: 'Indicação de Livros',
-  };
+const user = async (_, { id }, { getUsers }) => {
+  const response = await getUsers('/' + id);
+  const user = response.json();
+  return user;
 };
 
-export const postResolvers = {
+export const userResolvers = {
   Query: {
-    post,
-    posts,
+    user,
+    users,
   },
 };
