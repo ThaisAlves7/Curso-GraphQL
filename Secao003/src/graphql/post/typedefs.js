@@ -10,7 +10,7 @@ export const postTypeDefs = gql`
     id: ID!
     title: String!
     body: String!
-    # userId: User!
+    user: User!
     indexRef: Int!
     createdAt: String!
   }
