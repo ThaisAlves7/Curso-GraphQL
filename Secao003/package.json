@@ -17,7 +17,8 @@
     "dataloader": "^2.2.2",
     "dotenv": "^16.3.1",
     "graphql": "^16.6.0",
-    "json-server": "^0.17.1"
+    "json-server": "^0.17.1",
+    "node-fetch": "^2.7.0"
   },
   "devDependencies": {
     "eslint": "^8.52.0",
