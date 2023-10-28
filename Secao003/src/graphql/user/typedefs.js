@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server';
+import { gql } from 'apollo-server-core';
 
 export const userTypeDefs = gql`
   extend type Query {
@@ -13,6 +13,6 @@ export const userTypeDefs = gql`
     userName: String!
     indexRef: Int!
     createdAt: String!
-    # posts: [Post!]!
+    posts: [Post!]!
   }
 `;
